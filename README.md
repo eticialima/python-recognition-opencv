@@ -3,17 +3,17 @@
 ### Previa
  
 <img src="demo.png?raw=true"/>
+<img src="demo2.png?raw=true"/>
 
 ### Ferramentas
 * python
 * Kivy
-* opvencv
-* sqlite3
+* opvencv 
 
-<p>Esse é um modelo de cadastro de usuario feito em python com kivy. Para salvar as informações foi utilizado db sqlite3 e as imagens em pasta local.</p>
-<p>Referencia para construção banco de dados do modelo: aqui</p>
+<p>Esse é um modelo de cadastro de usuario feito em python com kivy. Formulario não salva no banco de dados. As fotos são cadastradas em uma pasta local. E usamos haarcascade_frontalface_default para as tecnicas de reconhecimento</p> 
+
 ### Como usar ? 
-<p>- py_main.py</P><p> Você pode baixar o repositorio ou clona-lo e depois executar o arquivo py_main.py para visualizar o modelo na web.</P> 
+<p> Você pode baixar o repositorio ou clona-lo e depois executar o arquivo py_main.py para visualizar o modelo na web.</P> 
 
 ### Você pode baixar o repositorio ou clona-lo e depois criar o ambiente virtual 
 * Linux: virtualenv nome_da_pasta

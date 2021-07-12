@@ -1,0 +1,2 @@
+# python_register_recognition_with_sqlite
+python_register_recognition_with_sqlite

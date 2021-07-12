@@ -24,10 +24,7 @@
 * Windows: source nome_da_pasta/scripts/activate 
 
 ### Depois preciva instalar o requirements.txt
-* python install -r requirements.txt
-
-### pronto 
-* python py_main.py
+* python install -r requirements.txt 
 
 ### Obrigada ❤️
 <p>Qualquer duvida pode me chamar no instagram [@eticialima](https://www.instagram.com/eticialima).</p> 

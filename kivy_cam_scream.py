@@ -1,8 +1,7 @@
 import kivy
 
-kivy.require('1.9.1')
+kivy.require('1.9.1') 
 
-import cv2
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
@@ -14,7 +13,7 @@ from kivy.uix.button import Button
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.textinput import TextInput
 from kivy.core.window import Window
-
+import cv2
 # COR DA JANELA E TAMANHO
 Window.clearcolor = (0.5, 0.5, 0.5, 1)
 Window.size = (980, 720)
@@ -200,7 +199,7 @@ class FunctionScreen(Screen):
 
         # CODIGO PARA EXTRAIR AS IMAGENS
         def face_extractor(img):
-            face_classifier = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+            face_classifier = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
             gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
             faces = face_classifier.detectMultiScale(gray,1.3,5)
 

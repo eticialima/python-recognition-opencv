@@ -1,4 +1,4 @@
-<img src="demo2.png?raw=true"/>
+<img src="demo.png?raw=true"/>
 
 ## This project was made with:
 

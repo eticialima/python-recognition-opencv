@@ -1,4 +1,3 @@
-<img src="demo.png?raw=true"/>
 
 ## This project was made with:
 

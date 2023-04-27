@@ -1,19 +1,22 @@
+import cv2
 import kivy
 
 kivy.require('1.9.1') 
 
+from kivy.lang import Builder
+from kivy.core.window import Window
+from kivy.clock import Clock
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.app import App
-from kivy.clock import Clock
 from kivy.graphics.texture import Texture
 from kivy.uix.image import Image
 from kivy.uix.button import Button
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.textinput import TextInput
 from kivy.core.window import Window
-import cv2
+
 # COR DA JANELA E TAMANHO
 Window.clearcolor = (0.5, 0.5, 0.5, 1)
 Window.size = (980, 720)
@@ -30,7 +33,7 @@ class KivyCV(Image):
         ret, frame = self.capture.read()
         if ret:
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-            faceCascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+            faceCascade = cv2.CascadeClassifier("lib/haarcascade_frontalface_default.xml")
             faces = faceCascade.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5, minSize=(20, 20))
             for (x, y, w, h) in faces:
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
@@ -154,6 +157,7 @@ class WelcomeScreen(Screen):
         print('CADASTRO EFETUADO COM SUCESSO')
 
 
+
 # SEGUNDA TELA DO SCREEN
 class FunctionScreen(Screen):
     def __init__(self, **kwargs):
@@ -199,7 +203,7 @@ class FunctionScreen(Screen):
 
         # CODIGO PARA EXTRAIR AS IMAGENS
         def face_extractor(img):
-            face_classifier = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+            face_classifier = cv2.CascadeClassifier("lib/haarcascade_frontalface_default.xml")
             gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
             faces = face_classifier.detectMultiScale(gray,1.3,5)
 
@@ -222,7 +226,7 @@ class FunctionScreen(Screen):
                 face = cv2.resize(face_extractor(frame),(200,200))
                 face = cv2.cvtColor(face, cv2.COLOR_BGR2GRAY)
 
-                file_name_path = '/faces/user'+str(count)+'.jpg'
+                file_name_path = 'faces/user'+str(count)+'.jpg'
                 cv2.imwrite(file_name_path,face)
 
                 cv2.putText(face,str(count),(50,50),cv2.FONT_HERSHEY_COMPLEX,1,(0,255,0),2)
